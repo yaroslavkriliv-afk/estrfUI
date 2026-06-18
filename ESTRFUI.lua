@@ -723,7 +723,7 @@ repeat
 	correctBuild = false
 
 	if not warned then
-		warn('Sitron | Build Mismatch')
+		warn('Rayfield | Build Mismatch')
 		print('Sitron may encounter issues as you are running an incompatible interface version ('.. ((Rayfield:FindFirstChild('Build') and Rayfield.Build.Value) or 'No Build') ..').\n\nThis version of Sitron is intended for interface build '..InterfaceBuild..'.')
 		warned = true
 	end
@@ -752,14 +752,14 @@ if gethui then
 	for _, Interface in ipairs(gethui():GetChildren()) do
 		if Interface.Name == Rayfield.Name and Interface ~= Rayfield then
 			Interface.Enabled = false
-			Interface.Name = "Sitron"
+			Interface.Name = "Rayfield"
 		end
 	end
 elseif not useStudio then
 	for _, Interface in ipairs(CoreGui:GetChildren()) do
 		if Interface.Name == Rayfield.Name and Interface ~= Rayfield then
 			Interface.Enabled = false
-			Interface.Name = "Sitron"
+			Interface.Name = "Rayfield"
 		end
 	end
 end
