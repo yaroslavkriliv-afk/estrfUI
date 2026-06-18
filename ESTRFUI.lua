@@ -255,7 +255,7 @@ local function loadSettings()
 
 	if not success then 
 		if writefile then
-			warn('Sitron had an issue accessing configuration saving capability.')
+			warn('Rayfield had an issue accessing configuration saving capability.')
 		end
 	end
 end
@@ -3882,7 +3882,7 @@ function RayfieldLibrary:LoadConfiguration()
 		if success and loaded and not notified then
 			RayfieldLibrary:Notify({Title = "Sitron Configurations", Content = "The configuration file for this script has been loaded from a previous session.", Image = 4384403532})
 		elseif not success and not notified then
-			warn('Sitron Configurations Error | '..tostring(result))
+			warn('Rayfield Configurations Error | '..tostring(result))
 			RayfieldLibrary:Notify({Title = "Sitron Configurations", Content = "We've encountered an issue loading your configuration correctly.\n\nCheck the Developer Console for more information.", Image = 4384402990})
 		end
 	end
