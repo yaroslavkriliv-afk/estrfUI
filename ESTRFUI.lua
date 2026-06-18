@@ -115,7 +115,7 @@ local function secureNotify(wType, title, content)
 end
 local InterfaceBuild = 'UU2NX'
 local Release = "Build 1.749"
-local RayfieldFolder = "Sitron"
+local RayfieldFolder = "Rayfield"
 local ConfigurationFolder = RayfieldFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 local settingsTable = {
@@ -177,7 +177,7 @@ local function callSafely(func, ...)
 	if func then
 		local success, result = pcall(func, ...)
 		if not success then
-			warn("Sitron | Function failed with error: ", result)
+			warn("Rayfield | Function failed with error: ", result)
 			return false
 		else
 			return result
@@ -235,7 +235,7 @@ local function loadSettings()
 					local settingType = typeof(default.Value)
 					-- Make sure setting has the correct type
 					if not (settingType == typeof(setting.Value)) then
-						warn("Sitron | Error parsing settings file. '"..settingName.."' must be a "..settingType)
+						warn("Rayfield | Error parsing settings file. '"..settingName.."' must be a "..settingType)
 						continue
 					end
 					default.Value = setting.Value
@@ -707,7 +707,7 @@ local RayfieldLibrary = {
 -- Interface Management
 
 local RayfieldAssetId = customAssetId or 10804731440
-local Sitron = useStudio and script.Parent:FindFirstChild('Rayfield') or game:GetObjects("rbxassetid://"..RayfieldAssetId)[1]
+local Rayfield = useStudio and script.Parent:FindFirstChild('Rayfield') or game:GetObjects("rbxassetid://"..RayfieldAssetId)[1]
 local buildAttempts = 0
 local correctBuild = false
 local warned
@@ -3875,15 +3875,15 @@ function RayfieldLibrary:LoadConfiguration()
 				end
 			else
 				notified = true
-				RayfieldLibrary:Notify({Title = "Rayfield Configurations", Content = "We couldn't enable Configuration Saving as you are not using software with filesystem support.", Image = 4384402990})
+				RayfieldLibrary:Notify({Title = "Sitron Configurations", Content = "We couldn't enable Configuration Saving as you are not using software with filesystem support.", Image = 4384402990})
 			end
 		end)
 
 		if success and loaded and not notified then
-			RayfieldLibrary:Notify({Title = "Rayfield Configurations", Content = "The configuration file for this script has been loaded from a previous session.", Image = 4384403532})
+			RayfieldLibrary:Notify({Title = "Sitron Configurations", Content = "The configuration file for this script has been loaded from a previous session.", Image = 4384403532})
 		elseif not success and not notified then
-			warn('Rayfield Configurations Error | '..tostring(result))
-			RayfieldLibrary:Notify({Title = "Rayfield Configurations", Content = "We've encountered an issue loading your configuration correctly.\n\nCheck the Developer Console for more information.", Image = 4384402990})
+			warn('Sitron Configurations Error | '..tostring(result))
+			RayfieldLibrary:Notify({Title = "Sitron Configurations", Content = "We've encountered an issue loading your configuration correctly.\n\nCheck the Developer Console for more information.", Image = 4384402990})
 		end
 	end
 
